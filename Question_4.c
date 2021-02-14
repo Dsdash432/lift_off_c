@@ -1,40 +1,31 @@
 #include<stdio.h>
-void main()
+int main()
 {
-    float phys,chem,bio,mat,com,p;
-    printf("Enter Physics marks \n");
-    scanf("%f", &phys);
-    printf("Enter Chemistry marks \n");
-    scanf("%f", &chem);
-    printf("Enter Biology marks \n");
-    scanf("%f", &bio);
-    printf("Enter Maths marks \n");
-    scanf("%f", &mat);
-    printf("Enter Computer marks \n");
-    scanf("%f", &com);
-    p = (phys+chem+bio+mat+com)/5;
-    if(p>=90)
+    int a[100], i, small, big, size;
+    printf("Enter the size of array \n");
+    scanf("%d", &size);
+
+    printf("Enter %d elements in the array \n", size);
+    for(i = 0; i<size; i++)
+    scanf("%d", &a[i]);
+
+    big = a[0];
+    for(i = 1; i < size; i++)
     {
-        printf("Grade A \n");
+        if(big < a[i])
+        {
+            big = a[i];
+        }
     }
-    else if(p>=80)
+    printf("The biggest number is %d \n", big);
+    small = a[0];
+    for(i = 1; i < size; i++)
     {
-        printf("Grade B \n");
+        if(small > a[i])
+        {
+            small = a[i];
+        }
     }
-    else if(p>=70)
-    {
-        printf("Grade C \n");
-    }
-    else if(p>=60)
-    {
-        printf("Grade D \n");
-    }
-    else if(p>=40)
-    {
-        printf("Grade E \n");
-    }
-    else if(p<40)
-    {
-        printf("Grade F \n");
-    }
+    printf("The smallest number is %d", small);
+    return 0;
 }

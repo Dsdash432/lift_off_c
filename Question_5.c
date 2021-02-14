@@ -1,27 +1,31 @@
-#include<stdio.h>
-void main()
+#include <stdio.h>
+
+int main()
 {
-    char a;
-    printf("Enter an alphabet \n");
-    scanf("%c",&a);
-    switch(a)
+    int i, j, N;
+    int count;
+
+    printf("Enter N: ");
+    scanf("%d", &N);
+
+    count = N * 2 - 1;
+
+    for(i=1; i<=count; i++)
     {
-        case 'a':
-        printf("Vowel \n");
-        break;
-        case 'e':
-        printf("Vowel \n");
-        break;
-        case 'i':
-        printf("Vowel \n");
-        break;
-        case 'o':
-        printf("Vowel \n");
-        break;
-        case 'u':
-        printf("Vowel \n");
-        break;
-        default:
-        printf("Consonant \n");
+        for(j=1; j<=count; j++)
+        {
+            if(j==i || (j==count - i + 1))
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
+        }
+
+        printf("\n");
     }
+
+    return 0;
 }
